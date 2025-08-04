@@ -31,7 +31,8 @@ function App() {
 
   clearTimeout(debounceTimer);
   debounceTimer = setTimeout(() => {
-    const imageUrl = `https://unavatar.io/twitter/${xHandle}`;
+    const imageUrl = `/api/unavatar-proxy?handle=${xHandle}`;
+
 
     // Görseli <img> ile çekeceğimiz için, fetch yerine Image() kullanıyoruz
     const img = new Image();
