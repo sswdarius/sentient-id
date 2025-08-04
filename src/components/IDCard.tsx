@@ -47,9 +47,7 @@ const IDCard: React.FC<IDCardProps> = ({
       }}
     >
       {profileImage && (
-        <div
-          className="absolute top-[245px] left-[120px] w-[150px] h-[150px] rounded-full overflow-hidden border-4 border-white"
-        >
+        <div className="absolute top-[245px] left-[120px] w-[150px] h-[150px] rounded-full overflow-hidden border-4 border-white">
           <img
             src={profileImage}
             alt="Profile"
@@ -65,18 +63,27 @@ const IDCard: React.FC<IDCardProps> = ({
         </div>
       )}
 
+      {/* Full Name */}
       <p className="absolute top-[228px] left-[450px] text-white text-xl font-semibold">
         {fullName}
       </p>
+
+      {/* X Handle */}
       <p className="absolute top-[292px] left-[493px] text-white text-lg">
         @{xHandle}
       </p>
+
+      {/* Role */}
       <p className="absolute top-[355px] left-[438px] text-white text-lg font-medium">
         {role}
       </p>
+
+      {/* Join Date */}
       <p className="absolute top-[425px] left-[500px] text-white text-sm">
-         {joinDate}
+        {joinDate}
       </p>
+
+      {/* Country */}
       <div className="absolute top-[490px] left-[490px] text-white text-sm flex items-center gap-2">
         {country.code && (
           <img

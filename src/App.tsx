@@ -2,9 +2,9 @@ import { useState, useRef, useEffect } from "react";
 import domtoimage from "dom-to-image";
 import Form from "./components/Form";
 import IDCard from "./components/IDCard";
-import flags from "emoji-flags";
+import flags, { FlagData } from "emoji-flags";
 
-let debounceTimer: NodeJS.Timeout;
+let debounceTimer: ReturnType<typeof setTimeout>;
 
 function App() {
   const [fullName, setFullName] = useState("");
@@ -17,8 +17,9 @@ function App() {
   const [zoom, setZoom] = useState(1);
   const [isManualUpload, setIsManualUpload] = useState(false);
 
-  const countryData = flags.data.find((c: any) => c.name.toLowerCase() === countryName.toLowerCase());
-
+  const countryData: FlagData | undefined = flags.data.find(
+    (c: FlagData) => c.name.toLowerCase() === countryName.toLowerCase()
+  );
 
   const country = {
     name: countryName,
@@ -54,7 +55,8 @@ function App() {
   const downloadCard = async () => {
     if (!cardRef.current) return;
 
-    domtoimage.toPng(cardRef.current)
+    domtoimage
+      .toPng(cardRef.current)
       .then((dataUrl: string) => {
         const link = document.createElement("a");
         link.href = dataUrl;
