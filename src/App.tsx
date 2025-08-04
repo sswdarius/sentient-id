@@ -26,29 +26,35 @@ function App() {
     code: countryData?.code || "",
   };
 
-  useEffect(() => {
+ useEffect(() => {
   if (!xHandle || isManualUpload) return;
 
   clearTimeout(debounceTimer);
   debounceTimer = setTimeout(() => {
     const imageUrl = `https://unavatar.io/twitter/${xHandle}`;
 
-    fetch(imageUrl)
-      .then((res) => res.blob())
-      .then((blob) => {
-        const reader = new FileReader();
-        reader.onloadend = () => {
-          const base64data = reader.result as string;
-          setProfileImage(base64data);
-        };
-        reader.readAsDataURL(blob);
-      })
-      .catch((err) => {
-        console.error("Image fetch error:", err);
-        setProfileImage(""); // fallback boş bırakılıyor
-      });
+    // Görseli <img> ile çekeceğimiz için, fetch yerine Image() kullanıyoruz
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.src = imageUrl;
+    img.onload = () => {
+      const canvas = document.createElement("canvas");
+      canvas.width = img.width;
+      canvas.height = img.height;
+      const ctx = canvas.getContext("2d");
+      if (ctx) {
+        ctx.drawImage(img, 0, 0);
+        const dataURL = canvas.toDataURL("image/png");
+        setProfileImage(dataURL); // base64 olarak kaydet
+      }
+    };
+    img.onerror = (err) => {
+      console.error("Image load error:", err);
+      setProfileImage("");
+    };
   }, 300);
 }, [xHandle, isManualUpload]);
+
 
 
   const cardRef = useRef<HTMLDivElement>(null);
