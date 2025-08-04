@@ -42,7 +42,7 @@ const IDCard: React.FC<IDCardProps> = ({
         backgroundImage: `url(${backgroundImage})`,
         transform: "translateZ(0)",
         willChange: "transform",
-        fontSmoothing: "antialiased",
+        fontSmooth: "always",
         WebkitFontSmoothing: "antialiased",
       }}
     >

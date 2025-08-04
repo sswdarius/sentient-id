@@ -108,7 +108,7 @@ function App() {
               transform: "scale(1)",
               transformOrigin: "top left",
               WebkitFontSmoothing: "antialiased",
-              fontSmoothing: "antialiased",
+              fontSmooth: "always",
               boxSizing: "border-box",
               backgroundColor: "transparent",
             }}

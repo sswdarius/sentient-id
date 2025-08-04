@@ -32,7 +32,8 @@ const Form: React.FC<FormProps> = ({
   setImageOffset,
   setZoom,
 }) => {
-  const countryList = flags.data.sort((a, b) => a.name.localeCompare(b.name));
+  cconst countryList = flags.data.sort((a: any, b: any) => a.name.localeCompare(b.name));
+
 
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
   const [offsetX, setOffsetX] = useState(0);
