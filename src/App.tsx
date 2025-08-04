@@ -27,28 +27,29 @@ function App() {
   };
 
   useEffect(() => {
-    if (!xHandle || isManualUpload) return;
+  if (!xHandle || isManualUpload) return;
 
-    clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(() => {
-      const imageUrl = `https://unavatar.io/twitter/${xHandle}`;
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(() => {
+    const imageUrl = `https://unavatar.io/twitter/${xHandle}`;
 
-      fetch(imageUrl)
-        .then((res) => res.blob())
-        .then((blob) => {
-          const reader = new FileReader();
-          reader.onloadend = () => {
-            const base64data = reader.result as string;
-            setProfileImage(base64data);
-          };
-          reader.readAsDataURL(blob);
-        })
-        .catch((err) => {
-          console.error("Image fetch error:", err);
-          setProfileImage("");
-        });
-    }, 300);
-  }, [xHandle, isManualUpload]);
+    fetch(imageUrl)
+      .then((res) => res.blob())
+      .then((blob) => {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          const base64data = reader.result as string;
+          setProfileImage(base64data);
+        };
+        reader.readAsDataURL(blob);
+      })
+      .catch((err) => {
+        console.error("Image fetch error:", err);
+        setProfileImage(""); // fallback boş bırakılıyor
+      });
+  }, 300);
+}, [xHandle, isManualUpload]);
+
 
   const cardRef = useRef<HTMLDivElement>(null);
 

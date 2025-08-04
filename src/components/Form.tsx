@@ -32,9 +32,7 @@ const Form: React.FC<FormProps> = ({
   setImageOffset,
   setZoom,
 }) => {
-  const countryList = (flags.data as any[]).sort((a, b) =>
-    a.name.localeCompare(b.name)
-  );
+  const countryList = flags.data.sort((a: any, b: any) => a.name.localeCompare(b.name));
 
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
   const [offsetX, setOffsetX] = useState(0);
@@ -44,6 +42,7 @@ const Form: React.FC<FormProps> = ({
   const dragging = useRef(false);
   const startX = useRef(0);
   const startY = useRef(0);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -169,13 +168,31 @@ const Form: React.FC<FormProps> = ({
         <label className="block text-sm font-medium text-gray-700">
           Alternative Profile Picture (Optional)
         </label>
+
+        {/* Custom Upload Button */}
+        <div className="mt-1 flex items-center gap-4">
+          <button
+            type="button"
+            onClick={() => fileInputRef.current?.click()}
+            className="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition text-sm font-medium"
+          >
+            Upload Image
+          </button>
+          <span className="text-sm text-gray-600">
+            {uploadedImage ? "Image selected" : "No file selected"}
+          </span>
+        </div>
+
+        {/* Hidden Input */}
         <input
           type="file"
           accept="image/*"
           onChange={handleImageUpload}
-          className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border file:border-gray-300 file:text-sm file:font-semibold file:bg-white hover:file:bg-gray-100"
+          ref={fileInputRef}
+          className="hidden"
         />
 
+        {/* Preview */}
         {uploadedImage && (
           <div className="mt-4">
             <div
@@ -198,7 +215,6 @@ const Form: React.FC<FormProps> = ({
               />
             </div>
 
-            {/* Zoom slider */}
             <div className="mt-2 flex flex-col items-center">
               <label className="text-sm text-gray-600 mb-1">Zoom</label>
               <input
