@@ -31,7 +31,7 @@ function App() {
 
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(() => {
-      const imageUrl = `http://localhost:3001/avatar/${xHandle}`;
+      const imageUrl = `https://unavatar.io/twitter/${xHandle}`;
 
       fetch(imageUrl)
         .then((res) => res.blob())
