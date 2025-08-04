@@ -17,9 +17,8 @@ function App() {
   const [zoom, setZoom] = useState(1);
   const [isManualUpload, setIsManualUpload] = useState(false);
 
-  const countryData = flags.data.find(
-    (c) => c.name.toLowerCase() === countryName.toLowerCase()
-  );
+  const countryData = flags.data.find((c: any) => c.name.toLowerCase() === countryName.toLowerCase());
+
 
   const country = {
     name: countryName,

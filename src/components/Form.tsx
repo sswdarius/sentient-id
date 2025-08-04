@@ -32,7 +32,8 @@ const Form: React.FC<FormProps> = ({
   setImageOffset,
   setZoom,
 }) => {
-  cconst countryList = flags.data.sort((a: any, b: any) => a.name.localeCompare(b.name));
+  const countryList = flags.data.sort((a: any, b: any) => a.name.localeCompare(b.name));
+
 
 
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
@@ -155,11 +156,11 @@ const Form: React.FC<FormProps> = ({
           className="mt-1 block w-full rounded-md border border-gray-300 p-2"
         >
           <option value="">Select a country</option>
-          {countryList.map((c) => (
-            <option key={c.code} value={c.name}>
-              {c.name} {c.emoji}
-            </option>
-          ))}
+          {countryList.map((c: any) => (
+  <option key={c.code} value={c.name}>
+    {c.name} {c.emoji}
+  </option>
+))}
         </select>
       </div>
 
