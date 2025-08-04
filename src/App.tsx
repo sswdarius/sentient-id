@@ -2,9 +2,9 @@ import { useState, useRef, useEffect } from "react";
 import domtoimage from "dom-to-image";
 import Form from "./components/Form";
 import IDCard from "./components/IDCard";
-import flags, { FlagData } from "emoji-flags";
+import flags from "emoji-flags";
 
-let debounceTimer: ReturnType<typeof setTimeout>;
+let debounceTimer: NodeJS.Timeout;
 
 function App() {
   const [fullName, setFullName] = useState("");
@@ -17,8 +17,8 @@ function App() {
   const [zoom, setZoom] = useState(1);
   const [isManualUpload, setIsManualUpload] = useState(false);
 
-  const countryData: FlagData | undefined = flags.data.find(
-    (c: FlagData) => c.name.toLowerCase() === countryName.toLowerCase()
+  const countryData = (flags.data as any[]).find((c) =>
+    c.name.toLowerCase() === countryName.toLowerCase()
   );
 
   const country = {
@@ -109,7 +109,6 @@ function App() {
               transform: "scale(1)",
               transformOrigin: "top left",
               WebkitFontSmoothing: "antialiased",
-              fontSmooth: "always",
               boxSizing: "border-box",
               backgroundColor: "transparent",
             }}
