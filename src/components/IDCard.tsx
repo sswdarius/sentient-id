@@ -64,36 +64,36 @@ const IDCard: React.FC<IDCardProps> = ({
       )}
 
       {/* Full Name */}
-      <p className="absolute top-[228px] left-[450px] text-white text-xl font-semibold">
-        {fullName}
-      </p>
+<p className="absolute top-[229px] left-[450px] text-white text-xl font-inter font-bold">
+  {fullName}
+</p>
 
-      {/* X Handle */}
-      <p className="absolute top-[292px] left-[493px] text-white text-lg">
-        @{xHandle}
-      </p>
+{/* X Handle */}
+<p className="absolute top-[292px] left-[493px] text-white text-xl font-inter font-bold">
+  @{xHandle}
+</p>
 
-      {/* Role */}
-      <p className="absolute top-[355px] left-[438px] text-white text-lg font-medium">
-        {role}
-      </p>
+{/* Role */}
+<p className="absolute top-[357px] left-[438px] text-white text-xl font-inter font-bold">
+  {role}
+</p>
 
-      {/* Join Date */}
-      <p className="absolute top-[425px] left-[500px] text-white text-sm">
-        {joinDate}
-      </p>
+{/* Join Date */}
+<p className="absolute top-[423px] left-[500px] text-white text-xl font-inter font-bold">
+  {joinDate}
+</p>
 
-      {/* Country */}
-      <div className="absolute top-[490px] left-[490px] text-white text-sm flex items-center gap-2">
-        {country.code && (
-          <img
-            src={`https://flagcdn.com/w40/${country.code.toLowerCase()}.png`}
-            alt={country.name}
-            style={{ width: "20px", height: "15px", borderRadius: "2px" }}
-          />
-        )}
-        <span>{country.name}</span>
-      </div>
+{/* Country */}
+<div className="absolute top-[486px] left-[490px] text-white text-xl font-inter font-bold flex items-center gap-2">
+  {country.code && (
+    <img
+      src={`https://flagcdn.com/w40/${country.code.toLowerCase()}.png`}
+      alt={country.name}
+      style={{ width: "20px", height: "15px", borderRadius: "2px" }}
+    />
+  )}
+  <span>{country.name}</span>
+</div>
     </div>
   );
 };

@@ -117,18 +117,8 @@ const Form: React.FC<FormProps> = ({
           className="mt-1 block w-full rounded-md border border-gray-300 p-2"
         >
           <option value="">Select Role</option>
-          <option>Artist L1</option>
-          <option>Artist L2</option>
-          <option>Artist L3</option>
-          <option>Builder L1</option>
-          <option>Builder L2</option>
-          <option>Builder L3</option>
-          <option>Helper L1</option>
-          <option>Helper L2</option>
-          <option>Helper L3</option>
-          <option>Educator L1</option>
-          <option>Educator L2</option>
-          <option>Educator L3</option>
+          <option>Homo Sentient</option>
+          <option>Sentient Stan</option>
           <option>Early AGI</option>
           <option>Advanced AGI</option>
           <option>Sentient AGI</option>
@@ -171,17 +161,18 @@ const Form: React.FC<FormProps> = ({
 
         {/* Custom Upload Button */}
         <div className="mt-1 flex items-center gap-4">
-          <button
-            type="button"
-            onClick={() => fileInputRef.current?.click()}
-            className="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition text-sm font-medium"
-          >
-            Upload Image
-          </button>
-          <span className="text-sm text-gray-600">
-            {uploadedImage ? "Image selected" : "No file selected"}
-          </span>
-        </div>
+  <button
+    type="button"
+    onClick={() => fileInputRef.current?.click()}
+    className="px-4 py-2 bg-neutral-700 text-white rounded hover:bg-neutral-800 transition text-sm font-medium"
+  >
+    Upload Image
+  </button>
+  <span className="text-sm text-gray-600">
+    {uploadedImage ? "Image selected" : "No file selected"}
+  </span>
+</div>
+
 
         {/* Hidden Input */}
         <input

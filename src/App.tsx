@@ -34,7 +34,7 @@ function App() {
     const imageUrl = `/api/unavatar-proxy?handle=${xHandle}`;
 
 
-    // Görseli <img> ile çekeceğimiz için, fetch yerine Image() kullanıyoruz
+    
     const img = new Image();
     img.crossOrigin = "anonymous";
     img.src = imageUrl;
@@ -78,9 +78,9 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
-      <h1 className="text-3xl font-bold text-center text-purple-700 mt-10 mb-14">
-        Sentient ID Generator
-      </h1>
+  <h1 className="text-3xl font-bold text-center text-neutral-800 mt-10 mb-14">
+    Sentient ID Card Generator
+  </h1>
 
       <div className="flex flex-row gap-10 max-w-7xl mx-auto">
         {/* Form panel */}
@@ -135,7 +135,7 @@ function App() {
           </div>
 
           <button
-            className="mt-6 px-6 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition"
+            className="mt-6 px-6 py-2 bg-neutral-700 text-white rounded hover:bg-neutral-800 transition"
             onClick={downloadCard}
           >
             Download Card
