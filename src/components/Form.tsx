@@ -122,6 +122,8 @@ const Form: React.FC<FormProps> = ({
           <option>Early AGI</option>
           <option>Advanced AGI</option>
           <option>Sentient AGI</option>
+		  <option>Moderator</option>
+		  <option>Sentient Team</option>
         </select>
       </div>
 
