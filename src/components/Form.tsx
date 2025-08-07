@@ -85,10 +85,10 @@ const Form: React.FC<FormProps> = ({
   };
 
   return (
-    <div className="flex flex-col gap-5 pb-10">
+    <div className="flex flex-col gap-6 pb-2">
       {/* Name */}
       <div>
-        <label className="block text-sm font-medium text-gray-700">Name</label>
+        <label className="block text-sm font-medium text-gray-700">Discord Name</label>
         <input
           type="text"
           value={fullName}
@@ -110,7 +110,7 @@ const Form: React.FC<FormProps> = ({
 
       {/* Role */}
       <div>
-        <label className="block text-sm font-medium text-gray-700">Role</label>
+        <label className="block text-sm font-medium text-gray-700">Roles</label>
         <select
           value={role}
           onChange={(e) => setRole(e.target.value)}
@@ -118,7 +118,6 @@ const Form: React.FC<FormProps> = ({
         >
           <option value="">Select Role</option>
           <option>Homo Sentient</option>
-          <option>Sentient Stan</option>
           <option>Early AGI</option>
           <option>Advanced AGI</option>
           <option>Sentient AGI</option>
@@ -162,7 +161,7 @@ const Form: React.FC<FormProps> = ({
         </label>
 
         {/* Custom Upload Button */}
-        <div className="mt-1 flex items-center gap-4">
+        <div className="mt-4 flex items-center gap-4">
   <button
     type="button"
     onClick={() => fileInputRef.current?.click()}

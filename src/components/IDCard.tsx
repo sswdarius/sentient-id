@@ -16,10 +16,13 @@ interface IDCardProps {
 }
 
 const getTemplateByRole = (role: string): string => {
-  if (role === "Early AGI") return "/template-purple.png";
-  if (role === "Advanced AGI") return "/template-green.png";
-  if (role === "Sentient AGI") return "/template-gold.png";
-  return "/template-gray.png";
+  if (role === "Homo Sentient") return "/homosentient.png";
+  if (role === "Early AGI") return "/earlyagi.png";
+  if (role === "Advanced AGI") return "/advancedagi.png";
+  if (role === "Sentient AGI") return "/sentientagi.png";
+  if (role === "Moderator") return "/moderator.png";
+  if (role === "Sentient Team") return "/sentientteam.png";
+  return "/homosentient.png";
 };
 
 const IDCard: React.FC<IDCardProps> = ({
@@ -47,7 +50,7 @@ const IDCard: React.FC<IDCardProps> = ({
       }}
     >
       {profileImage && (
-        <div className="absolute top-[245px] left-[120px] w-[150px] h-[150px] rounded-full overflow-hidden border-4 border-white">
+        <div className="absolute top-[205px] left-[70px] w-[230px] h-[230px] rounded-full overflow-hidden border-4 border-white">
           <img
             src={profileImage}
             alt="Profile"
@@ -55,8 +58,8 @@ const IDCard: React.FC<IDCardProps> = ({
             style={{
               left: offsetX,
               top: offsetY,
-              width: 150 * zoom,
-              height: 150 * zoom,
+              width: 225 * zoom,
+              height: 225 * zoom,
               objectFit: "cover",
             }}
           />
@@ -64,27 +67,27 @@ const IDCard: React.FC<IDCardProps> = ({
       )}
 
       {/* Full Name */}
-<p className="absolute top-[229px] left-[450px] text-white text-xl font-inter font-bold">
+<p className="absolute top-[239px] left-[525px] text-white text-xl font-inter font-bold">
   {fullName}
 </p>
 
 {/* X Handle */}
-<p className="absolute top-[292px] left-[493px] text-white text-xl font-inter font-bold">
+<p className="absolute top-[302px] left-[470px] text-white text-xl font-inter font-bold">
   @{xHandle}
 </p>
 
 {/* Role */}
-<p className="absolute top-[357px] left-[438px] text-white text-xl font-inter font-bold">
+<p className="absolute top-[363px] left-[414px] text-white text-xl font-inter font-bold">
   {role}
 </p>
 
 {/* Join Date */}
-<p className="absolute top-[423px] left-[500px] text-white text-xl font-inter font-bold">
+<p className="absolute top-[424px] left-[470px] text-white text-xl font-inter font-bold">
   {joinDate}
 </p>
 
 {/* Country */}
-<div className="absolute top-[486px] left-[490px] text-white text-xl font-inter font-bold flex items-center gap-2">
+<div className="absolute top-[485px] left-[460px] text-white text-xl font-inter font-bold flex items-center gap-2">
   {country.code && (
     <img
       src={`https://flagcdn.com/w40/${country.code.toLowerCase()}.png`}
