@@ -148,8 +148,8 @@ const Form: React.FC<FormProps> = ({
           <option value="">Select a country</option>
           {countryList.map((c: any) => (
             <option key={c.code} value={c.name}>
-              {c.name} {c.emoji}
-            </option>
+  {c.name}
+</option>
           ))}
         </select>
       </div>

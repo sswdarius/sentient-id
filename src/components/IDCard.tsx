@@ -66,37 +66,55 @@ const IDCard: React.FC<IDCardProps> = ({
         </div>
       )}
 
-      {/* Full Name */}
-<p className="absolute top-[239px] left-[525px] text-white text-xl font-inter font-bold">
-  {fullName}
-</p>
+      {/* Font */}
+      <div style={{ fontFamily: 'power' }}>
+        {/* Full Name */}
+        <p
+          className="absolute top-[230px] left-[525px] text-white"
+          style={{ fontSize: "32px" }}
+        >
+          {fullName}
+        </p>
 
-{/* X Handle */}
-<p className="absolute top-[302px] left-[470px] text-white text-xl font-inter font-bold">
-  @{xHandle}
-</p>
+        {/* X Handle */}
+        <p
+          className="absolute top-[297px] left-[470px] text-white"
+          style={{ fontSize: "32px" }}
+        >
+          @{xHandle}
+        </p>
 
-{/* Role */}
-<p className="absolute top-[363px] left-[414px] text-white text-xl font-inter font-bold">
-  {role}
-</p>
+        {/* Role */}
+        <p
+          className="absolute top-[354px] left-[414px] text-white"
+          style={{ fontSize: "32px" }}
+        >
+          {role}
+        </p>
 
-{/* Join Date */}
-<p className="absolute top-[424px] left-[470px] text-white text-xl font-inter font-bold">
-  {joinDate}
-</p>
+        {/* Join Date */}
+        <p
+          className="absolute top-[416px] left-[470px] text-white"
+          style={{ fontSize: "32px" }}
+        >
+          {joinDate}
+        </p>
 
-{/* Country */}
-<div className="absolute top-[485px] left-[460px] text-white text-xl font-inter font-bold flex items-center gap-2">
-  {country.code && (
-    <img
-      src={`https://flagcdn.com/w40/${country.code.toLowerCase()}.png`}
-      alt={country.name}
-      style={{ width: "20px", height: "15px", borderRadius: "2px" }}
-    />
-  )}
-  <span>{country.name}</span>
-</div>
+        {/* Country */}
+        <div
+          className="absolute top-[477px] left-[456px] text-white flex items-center gap-3"
+          style={{ fontSize: "32px" }}
+        >
+          <span>{country.name}</span>
+          {country.code && (
+            <img
+              src={`https://flagcdn.com/w40/${country.code.toLowerCase()}.png`}
+              alt={country.name}
+              style={{ width: "40px", height: "27px", borderRadius: "2px" }}
+            />
+          )}
+        </div>
+      </div>
     </div>
   );
 };

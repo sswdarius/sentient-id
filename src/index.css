@@ -3,6 +3,15 @@
 /* Google Fonts: Noto Color Emoji */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap");
 
+@font-face {
+  font-family: 'power';
+  src: url('/fonts/power.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 /* Sayfa düzeni ve varsayılan stiller */
 html, body, #root {
   margin: 0;
