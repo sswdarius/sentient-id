@@ -65,52 +65,45 @@ const IDCard: React.FC<IDCardProps> = ({
           />
         </div>
       )}
+     <div style={{ fontFamily: 'power' }}>
+  <p
+    className="absolute top-[230px] left-[525px]"
+    style={{ fontSize: "32px", color: "white" }}
+  >
+    {fullName}
+  </p>
 
-      {/* Font */}
-      <div style={{ fontFamily: 'power' }}>
-        {/* Full Name */}
-        <p
-          className="absolute top-[230px] left-[525px] text-white"
-          style={{ fontSize: "32px" }}
-        >
-          {fullName}
-        </p>
+  <p
+    className="absolute top-[297px] left-[470px]"
+    style={{ fontSize: "32px", color: "white" }}
+  >
+    @{xHandle}
+  </p>
 
-        {/* X Handle */}
-        <p
-          className="absolute top-[297px] left-[470px] text-white"
-          style={{ fontSize: "32px" }}
-        >
-          @{xHandle}
-        </p>
+  <p
+    className="absolute top-[354px] left-[414px]"
+    style={{ fontSize: "32px", color: "white" }}
+  >
+    {role}
+  </p>
 
-        {/* Role */}
-        <p
-          className="absolute top-[354px] left-[414px] text-white"
-          style={{ fontSize: "32px" }}
-        >
-          {role}
-        </p>
+  <p
+    className="absolute top-[416px] left-[470px]"
+    style={{ fontSize: "32px", color: "white" }}
+  >
+    {joinDate}
+  </p>
 
-        {/* Join Date */}
-        <p
-          className="absolute top-[416px] left-[470px] text-white"
-          style={{ fontSize: "32px" }}
-        >
-          {joinDate}
-        </p>
-
-        {/* Country */}
-        <div
-          className="absolute top-[477px] left-[456px] text-white flex items-center gap-3"
-          style={{ fontSize: "32px" }}
-        >
-          <span>{country.name}</span>
-          {country.code && (
-            <img
-              src={`https://flagcdn.com/w40/${country.code.toLowerCase()}.png`}
-              alt={country.name}
-              style={{ width: "40px", height: "27px", borderRadius: "2px" }}
+  <div
+    className="absolute top-[477px] left-[456px] flex items-center gap-3"
+    style={{ fontSize: "32px", color: "white" }}
+  >
+    <span>{country.name}</span>
+    {country.code && (
+      <img
+        src={`https://flagcdn.com/w40/${country.code.toLowerCase()}.png`}
+        alt={country.name}
+        style={{ width: "40px", height: "27px", borderRadius: "2px" }}
             />
           )}
         </div>

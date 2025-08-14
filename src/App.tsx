@@ -76,7 +76,6 @@ function App() {
 
 
       
-      {/* Sol üst logo */}
       <img
         src="/logo.png"
         alt="Logo"
@@ -97,10 +96,10 @@ function App() {
 
         <div className="flex flex-row gap-10 max-w-7xl mx-auto">
           
-          {/* dobbyyy */}
+          
           <div className="relative w-[400px] flex-shrink-0 transform -translate-x-32">
 
-            {/* dobbyyy */}
+            
   <img
   src="/dobby.png"
   alt="Dobbyyyyyyyyyyyyy"
@@ -115,7 +114,7 @@ function App() {
 />
 
 
-            {/* Form panel */}
+            
             <div className="bg-white p-6 mt-16 rounded-xl shadow-md h-fit">
               <Form
                 fullName={fullName}
@@ -141,7 +140,7 @@ function App() {
             </div>
           </div>
 
-          {/* Kart panel */}
+          
           <div className="flex-1 flex flex-col items-center transform translate-x-0">
             <div
               ref={cardRef}
@@ -177,7 +176,7 @@ function App() {
         </div>
       </div>
 
-      {/* Footer */}
+      
       <footer className="text-center text-base text-gray-500 py-1">
         <p>
           Built by{" "}

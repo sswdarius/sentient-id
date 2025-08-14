@@ -86,7 +86,6 @@ const Form: React.FC<FormProps> = ({
 
   return (
     <div className="flex flex-col gap-6 pb-2">
-      {/* Name */}
       <div>
         <label className="block text-sm font-medium text-gray-700">Discord Name</label>
         <input
@@ -97,7 +96,6 @@ const Form: React.FC<FormProps> = ({
         />
       </div>
 
-      {/* X Handle */}
       <div>
         <label className="block text-sm font-medium text-gray-700">X Handle</label>
         <input
@@ -108,7 +106,6 @@ const Form: React.FC<FormProps> = ({
         />
       </div>
 
-      {/* Role */}
       <div>
         <label className="block text-sm font-medium text-gray-700">Roles</label>
         <select
@@ -126,7 +123,6 @@ const Form: React.FC<FormProps> = ({
         </select>
       </div>
 
-      {/* Join Date */}
       <div>
         <label className="block text-sm font-medium text-gray-700">Join Date</label>
         <input
@@ -137,7 +133,6 @@ const Form: React.FC<FormProps> = ({
         />
       </div>
 
-      {/* Country */}
       <div>
         <label className="block text-sm font-medium text-gray-700">Country</label>
         <select
@@ -154,13 +149,11 @@ const Form: React.FC<FormProps> = ({
         </select>
       </div>
 
-      {/* Alternative Profile Picture */}
       <div>
         <label className="block text-sm font-medium text-gray-700">
           Alternative Profile Picture (Optional)
         </label>
 
-        {/* Custom Upload Button */}
         <div className="mt-4 flex items-center gap-4">
   <button
     type="button"
@@ -175,7 +168,6 @@ const Form: React.FC<FormProps> = ({
 </div>
 
 
-        {/* Hidden Input */}
         <input
           type="file"
           accept="image/*"
@@ -184,7 +176,6 @@ const Form: React.FC<FormProps> = ({
           className="hidden"
         />
 
-        {/* Preview */}
         {uploadedImage && (
           <div className="mt-4">
             <div

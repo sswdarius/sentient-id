@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import fetch from "node-fetch"; // v2 kullan, yoksa ESM sorun çıkar
+import fetch from "node-fetch"; 
 
 const app = express();
 const PORT = 3001;
